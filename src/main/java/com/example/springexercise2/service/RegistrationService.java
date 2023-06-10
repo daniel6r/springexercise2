@@ -1,5 +1,6 @@
 package com.example.springexercise2.service;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -11,7 +12,9 @@ public class RegistrationService {
     private final boolean newsletterSubscription;
     private final List<String> countryList;
 
-    public RegistrationService(String minimumAge, boolean newsletterSubscription, List<String> countryList) {
+    public RegistrationService(@Value("${strings.minimumAge}") String minimumAge,
+                               @Value("${strings.newsletterSubscription}") boolean newsletterSubscription,
+                               @Value("#{${strings.countryList}}") List<String> countryList) {
         this.minimumAge = minimumAge;
         this.newsletterSubscription = newsletterSubscription;
         this.countryList = countryList;
