@@ -16,7 +16,7 @@ public class SpringExerciseApplication {
 
 		System.out.println("default countries: " + registrationService.getCountryList());
 		System.out.println("default minimum age: " + registrationService.getMinimumAge());
-		System.out.println("default subscription status: " + registrationService.isNewsletterSubscription());
+		System.out.println("default subscription value: " + registrationService.isNewsletterSubscription());
 	}
 
 }
